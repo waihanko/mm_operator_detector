@@ -3,7 +3,7 @@ library mm_operator_detector;
 
 enum TelecomOperator {
   ooredoo,
-  telenor,
+  atom,
   mpt,
   mec,
   mytel,
@@ -89,7 +89,7 @@ class MMOperatorDetector {
     if (_ooredooRegex.hasMatch(phoneNumber)) {
       return TelecomOperator.ooredoo;
     } else if (_telenorRegex.hasMatch(phoneNumber)) {
-      return TelecomOperator.telenor;
+      return TelecomOperator.atom;
     } else if (_mptRegex.hasMatch(phoneNumber)) {
       return TelecomOperator.mpt;
     } else if (_mecRegex.hasMatch(phoneNumber)) {
