@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Text(
               MMOperatorDetector.normalizeInput("+95959428000332"),
               style: Theme.of(context).textTheme.headlineMedium,

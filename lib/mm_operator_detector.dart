@@ -38,19 +38,13 @@ class MMOperatorDetector {
   static final RegExp _mptRegex = RegExp(r'^(09|\+?959)(5\d{6}|4\d{7,8}|2\d{6,8}|6\d{6}|8\d{6}|7\d{7}|9(0|1|9)\d{5,6}|2[0-4]\d{5}|5[0-6]\d{5}|8[13-7]\d{5}|4[1379]\d{6}|73\d{6}|91\d{6}|25\d{7}|26[0-5]\d{6}|40[0-4]\d{6}|42\d{7}|45\d{7}|89[6789]\d{6}|)$');
   static final RegExp _mecRegex = RegExp(r'^(09|\+?959)(3\d{7,8}|3[0-369]\d{6}|34\d{7})$');
 
-  static bool isValidMMPhoneNumber(String? phoneNumber) {
-    if (phoneNumber == null) {
-      throw ArgumentError('Please include phoneNumber parameter.');
-    }
+  static bool isValidMMPhoneNumber(String phoneNumber) {
     phoneNumber = normalizeInput(phoneNumber);
     final RegExp myanmarPhoneRe = RegExp(r'^(09|\+?950?9|\+?95950?9)\d{7,9}$');
     return myanmarPhoneRe.hasMatch(phoneNumber);
   }
 
-  static String _sanitizeInput(String? phoneNumber) {
-    if (phoneNumber == null) {
-      throw ArgumentError('Please include phoneNumber parameter.');
-    }
+  static String _sanitizeInput(String phoneNumber) {
 
     phoneNumber = phoneNumber.trim().replaceAll(RegExp(r'[- )(]+'), '');
 
@@ -68,10 +62,7 @@ class MMOperatorDetector {
     return phoneNumber;
   }
 
-  static String normalizeInput(String? phoneNumber) {
-    if (phoneNumber == null) {
-      throw ArgumentError('Please include phoneNumber parameter.');
-    }
+  static String normalizeInput(String phoneNumber) {
     String sanitizedNumber = _sanitizeInput(phoneNumber);
     final RegExp possibleCases = RegExp(r'^((09-)|(\+959)|(09\s)|(959)|(09\.))');
 

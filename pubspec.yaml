@@ -1,7 +1,7 @@
 name: mm_operator_detector
 description: "Detect Myanmar Sim Operator"
 version: 0.0.1
-homepage:
+homepage: https://github.com/waihanko/mm_operator_detector
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
